@@ -2,10 +2,10 @@
 
     // create the module and name it scotchApp
         // also include ngRoute for all our routing needs
-    var scotchApp = angular.module('myApp', ['ngRoute']);
+    var app = angular.module('myApp', ['ngRoute']);
 
     // configure our routes
-    scotchApp.config(function($routeProvider) {
+    app.config(function($routeProvider) {
         $routeProvider
 
             // route for the home page
@@ -24,12 +24,12 @@
             .when('/evidence', {
                 templateUrl : 'pages/evidence.html',
                 controller  : 'evidenceController'
-            });
+            })
         
             .when('/review', {
                 templateUrl : 'pages/review.html',
                 controller  : 'reviewController'
-            });
+            })
         
             .when('/confirm', {
                 templateUrl : 'pages/confirm.html',
@@ -38,15 +38,21 @@
     });
 
     // create the controller and inject Angular's $scope
-    scotchApp.controller('mainController', function($scope) {
+    app.controller('mainController', function($scope) {
         // create a message to display in our view
         $scope.message = 'Welcome to my home page';
     });
 
-    scotchApp.controller('aboutController', function($scope) {
-        $scope.message = 'About page';
+    app.controller('productController', function($scope) {
+        $scope.message = 'Products page';
     });
 
-    scotchApp.controller('contactController', function($scope) {
-        $scope.message = 'contact us page';
+    app.controller('evidenceController', function($scope) {
+        $scope.message = 'Evidence page';
+    });
+    app.controller('reviewController', function($scope) {
+        $scope.message = 'Review of my tickets page';
+    });
+    app.controller('confirmController', function($scope) {
+        $scope.message = 'Confirmation page';
     });
