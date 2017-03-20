@@ -1,6 +1,6 @@
 <!-- index.html -->
     <!DOCTYPE html>
-    <html ng-app="scotchApp">
+    <html>
     <head>
       <!-- SCROLLS -->
       <!-- load bootstrap and fontawesome via CDN -->
@@ -13,7 +13,7 @@
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
       <script src="script.js"></script>
     </head>
-    <body ng-controller="mainController">
+    <body ng-app="myApp">
 
         <!-- HEADER AND NAVBAR -->
         <header>
@@ -33,7 +33,7 @@
         </header>
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
-        <div id="main">
+        <div ng-view>
                  {{ message }}
             <!-- angular templating -->
             <!-- this is where content will be injected -->
