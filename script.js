@@ -10,20 +10,30 @@
 
             // route for the home page
             .when('/', {
-                templateUrl : 'pages/home.html',
+                templateUrl : 'pages/categories.html',
                 controller  : 'mainController'
             })
 
             // route for the about page
-            .when('/about', {
-                templateUrl : 'pages/about.html',
-                controller  : 'aboutController'
+            .when('/product', {
+                templateUrl : 'pages/product.html',
+                controller  : 'productController'
             })
 
             // route for the contact page
-            .when('/contact', {
-                templateUrl : 'pages/contact.html',
-                controller  : 'contactController'
+            .when('/evidence', {
+                templateUrl : 'pages/evidence.html',
+                controller  : 'evidenceController'
+            });
+        
+            .when('/review', {
+                templateUrl : 'pages/review.html',
+                controller  : 'reviewController'
+            });
+        
+            .when('/confirm', {
+                templateUrl : 'pages/confirm.html',
+                controller  : 'confirmController'
             });
     });
 
