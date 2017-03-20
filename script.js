@@ -41,6 +41,14 @@
     app.controller('mainController', function($scope) {
         // create a message to display in our view
         $scope.message = 'Welcome to my home page';
+        $scope.search = function () {
+          /* the $http service allows you to make arbitrary ajax requests.
+           * in this case you might also consider using angular-resource and setting up a
+           * User $resource. */
+          $http.get('/your/url/search', { params: user },
+            function (response) { $scope.results = response; },
+            function (failure) { console.log("failed :(", failure); });
+      }
     });
 
     app.controller('productController', function($scope) {
